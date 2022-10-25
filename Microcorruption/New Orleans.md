@@ -23,4 +23,10 @@ The first instruction moves the hex value '2500' into r15. The next instruction 
 The characters at the right are the ASCII representations of the hex values. The last 'mov.b' instruction moves '00', which is a null terminator for a string. 
 
 #### Thoughts so far
-After looking at the 'create_password' function, we can see that values are being placed into memory followed by a null terminator. This could be a string that is compared to our password that we will enter, either it is filled with random characters to throw us off,  __at is the actual password.
+After looking at the 'create_password' function, we can see that values are being placed into memory followed by a null terminator. This could be a string that is compared to our password that we will enter, either it is filled with random characters to throw us off, the values will be modified later on and then compared, or that is the actual password.
+
+#### Entering the password
+After returning back to main the program moves text into r15 and then calls 'puts'. This prints the text 'Enter the password to continue' to the I/O Console. 'get_password' is then called and this gets the users input. Finally, check_password is called.
+
+![](New_Orleans_Images/Memory_password.png)
+
