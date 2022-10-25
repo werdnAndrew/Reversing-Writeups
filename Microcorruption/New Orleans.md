@@ -28,5 +28,10 @@ After looking at the 'create_password' function, we can see that values are bein
 #### Entering the password
 After returning back to main the program moves text into r15 and then calls 'puts'. This prints the text 'Enter the password to continue' to the I/O Console. 'get_password' is then called and this gets the users input. Finally, check_password is called.
 
-![](New_Orleans_Images/Memory_password.png)
+#### <check_password>
+
+![](New_Orleans_Images/check_password.png)
+
+Right off the bat r14 gets cleared. r15 ('439c') gets copied into r13, and r14 ('0') gets added to r13 (still '439c'). We can see that the next instruction is the first 'cmp.b' in the program. Similar to 'mov.b' in that it only pertains to one byte, this instruction compares the two values. The first value is stored in memory at the address contained in r13 ('439c') and the second value is at memory address '2400' plus an offset of '0'. Following the compare we see a 'jnz' instruction
+
 
