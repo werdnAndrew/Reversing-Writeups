@@ -32,6 +32,6 @@ After returning back to main the program moves text into r15 and then calls 'put
 
 ![](New_Orleans_Images/check_password.png)
 
-Right off the bat r14 gets cleared. r15 ('439c') gets copied into r13, and r14 ('0') gets added to r13 (still '439c'). We can see that the next instruction is the first 'cmp.b' in the program. Similar to 'mov.b' in that it only pertains to one byte, this instruction compares the two values. The first value is stored in memory at the address contained in r13 ('439c') and the second value is at memory address '2400' plus an offset of '0'. Following the compare we see a 'jnz' instruction
+Right off the bat r14 gets cleared. r15 ('439c') gets copied into r13, and r14 ('0') gets added to r13 (still '439c'). We can see that the next instruction is the first 'cmp.b' in the program. Similar to 'mov.b' in that it only pertains to one byte, this instruction compares the two values. The first value is stored in memory at the address contained in r13 ('439c') and the second value is at memory address '2400' plus an offset of '0'. Following the compare we see a 'jnz' instruction. 'jnz' will jump only if sr is not 0. Since we did not enter the correct password on the first try sr became '1' after the 'cmp.b' instruction. Before restarting the program to enter the value at '2400' lets take a look at the rest of the function. If we assume that we had entered the
 
 
